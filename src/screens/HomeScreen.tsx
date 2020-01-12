@@ -8,13 +8,24 @@ interface Props {
 class HomeScreen extends React.Component<Props> {
   render() {
     const { navigation } = this.props;
-    console.log("If you are at room you wont get any back action");
     return (
       <View>
         <Button
           title="General Stack"
           onPress={() => {
-            navigation.push("StackNavigation");
+            navigation.navigate("StackNavigation");
+          }}
+        />
+        <Button
+          title="General Tab"
+          onPress={() => {
+            navigation.navigate("Tab");
+          }}
+        />
+        <Button
+          title="General Drawer"
+          onPress={() => {
+            navigation.toggleDrawer();
           }}
         />
       </View>

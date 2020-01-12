@@ -20,6 +20,10 @@ interface Props {
 class StackNavigationScreen extends React.Component<Props> {
   componentDidMount() {
     console.log(this.props.navigation);
+    console.log("didmount called");
+  }
+  componentWillUnmount() {
+    console.log("willunmount");
   }
   render() {
     return (
@@ -59,7 +63,7 @@ class StackNavigationScreen extends React.Component<Props> {
         />
         <Button
           title="Focusing and Others"
-          onPress={() => this.props.navigation.push("StackFocusLogs")}
+          onPress={() => this.props.navigation.navigate("StackFocusLogs")}
         />
       </View>
     );
